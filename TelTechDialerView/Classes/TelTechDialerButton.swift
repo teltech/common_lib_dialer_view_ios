@@ -42,8 +42,6 @@ public class TelTechDialerButton: UIButton {
     }
     
     public override func draw(_ rect: CGRect) {
-        let h = rect.height
-        let w = rect.width
         var color: UIColor = UIColor.lightGray
         var textColor: UIColor = UIColor.white
 

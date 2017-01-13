@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TelTechDialerView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A simple drop in to have an in-call UI for voip calls.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+This pod creates a simple interface for receiving and placing SIP calls.
+It imitates the look and feel of the native iOS dialer.
                        DESC
 
   s.homepage         = 'https://git.teltech.co/jasonclardy/TelTechDialerView'
