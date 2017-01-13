@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q4N-eR-ow5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1RN-hU-UQA">
+            <objects>
+                <navigationController id="q4N-eR-ow5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7a2-tn-Czc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rTA-pM-MPr" kind="relationship" relationship="rootViewController" id="Fcv-C3-KXz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AvJ-vf-3Zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="154"/>
+        </scene>
+        <!--Tel Tech On Call Controller-->
+        <scene sceneID="YIx-he-zj5">
+            <objects>
+                <viewController storyboardIdentifier="OnCall" id="rTA-pM-MPr" customClass="TelTechOnCallController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6my-CF-j7Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="5pV-Qy-axS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kBh-qv-MHO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-Xh-Ew4">
+                                <rect key="frame" x="157" y="545" width="62" height="62"/>
+                                <state key="normal" image="hangup.png"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="EndCall"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappedEndCall:" destination="rTA-pM-MPr" eventType="touchUpInside" id="hGq-Fc-va0"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-8z-Xrb">
+                                <rect key="frame" x="50" y="341" width="275" height="84"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-PC-xg7">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="84"/>
+                                        <state key="normal" image="mute"/>
+                                        <connections>
+                                            <action selector="tappedMute:" destination="rTA-pM-MPr" eventType="touchUpInside" id="7aJ-AD-CLe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llj-3h-gRy">
+                                        <rect key="frame" x="105" y="0.0" width="65" height="84"/>
+                                        <state key="normal" image="keypad"/>
+                                        <connections>
+                                            <action selector="tappedKeypad:" destination="rTA-pM-MPr" eventType="touchUpInside" id="IwF-6D-o8I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-Ac-2Cd">
+                                        <rect key="frame" x="210" y="0.0" width="65" height="84"/>
+                                        <state key="normal" image="speaker"/>
+                                        <connections>
+                                            <action selector="tappedSpeaker:" destination="rTA-pM-MPr" eventType="touchUpInside" id="OY0-1v-mQX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8v0-md-EDz">
+                                <rect key="frame" x="139.5" y="80" width="97.5" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caller ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFk-bw-9Zh">
+                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-2J-NUc">
+                                        <rect key="frame" x="30.5" y="39.5" width="36" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ucL-8z-Xrb" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="Au8-Z2-5na"/>
+                            <constraint firstItem="8v0-md-EDz" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="C0P-2a-viG"/>
+                            <constraint firstItem="Ljk-Xh-Ew4" firstAttribute="top" secondItem="ucL-8z-Xrb" secondAttribute="bottom" constant="120" id="Lm9-6w-6E7"/>
+                            <constraint firstItem="Ljk-Xh-Ew4" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="cge-nW-Zut"/>
+                            <constraint firstItem="5pV-Qy-axS" firstAttribute="top" secondItem="Ljk-Xh-Ew4" secondAttribute="bottom" constant="60" id="heV-8w-Qrr"/>
+                            <constraint firstItem="8v0-md-EDz" firstAttribute="top" secondItem="6my-CF-j7Z" secondAttribute="bottom" constant="60" id="pCh-No-8Jv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0uD-Tx-fyL"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="callerIDLabel" destination="rFk-bw-9Zh" id="aqd-ck-Lox"/>
+                        <outlet property="endCallButton" destination="Ljk-Xh-Ew4" id="cdM-0g-J2a"/>
+                        <outlet property="keypadButton" destination="llj-3h-gRy" id="07W-pq-42H"/>
+                        <outlet property="muteButton" destination="IDG-PC-xg7" id="ToV-h8-hlo"/>
+                        <outlet property="speakerButton" destination="9XL-Ac-2Cd" id="hlc-Cp-LSP"/>
+                        <outlet property="timerLabel" destination="0Wr-2J-NUc" id="885-gb-Igo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpm-y8-pyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469.60000000000002" y="152.47376311844079"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hangup.png" width="62" height="62"/>
+        <image name="keypad" width="65" height="84"/>
+        <image name="mute" width="65" height="81"/>
+        <image name="speaker" width="65" height="83"/>
+    </resources>
+</document>

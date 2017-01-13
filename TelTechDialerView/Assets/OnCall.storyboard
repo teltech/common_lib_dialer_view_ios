@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q4N-eR-ow5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1RN-hU-UQA">
+            <objects>
+                <navigationController id="q4N-eR-ow5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7a2-tn-Czc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rTA-pM-MPr" kind="relationship" relationship="rootViewController" id="Fcv-C3-KXz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AvJ-vf-3Zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="154"/>
+        </scene>
+        <!--Tel Tech On Call Controller-->
+        <scene sceneID="YIx-he-zj5">
+            <objects>
+                <viewController storyboardIdentifier="OnCall" id="rTA-pM-MPr" customClass="TelTechOnCallController" customModule="TelTechDialerView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6my-CF-j7Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="5pV-Qy-axS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kBh-qv-MHO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-Xh-Ew4">
+                                <rect key="frame" x="157" y="545" width="62" height="62"/>
+                                <state key="normal" image="hangup"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="EndCall"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappedEndCall:" destination="rTA-pM-MPr" eventType="touchUpInside" id="hGq-Fc-va0"/>
+                                </connections>
+                            </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-8z-Xrb">
+                                <rect key="frame" x="78" y="292" width="220" height="84"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-PC-xg7">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="84"/>
+                                        <state key="normal" image="mute"/>
+                                        <connections>
+                                            <action selector="tappedMute:" destination="rTA-pM-MPr" eventType="touchUpInside" id="7aJ-AD-CLe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llj-3h-gRy">
+                                        <rect key="frame" x="95" y="0.0" width="65" height="84"/>
+                                        <state key="normal" image="keypad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="KeypadView"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tappedKeypad:" destination="rTA-pM-MPr" eventType="touchUpInside" id="IwF-6D-o8I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-Ac-2Cd" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                        <rect key="frame" x="190" y="0.0" width="30" height="84"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="speaker"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tappedSpeaker:" destination="rTA-pM-MPr" eventType="touchUpInside" id="OY0-1v-mQX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8v0-md-EDz">
+                                <rect key="frame" x="139" y="80" width="98" height="61"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caller ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFk-bw-9Zh">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-2J-NUc">
+                                        <rect key="frame" x="31" y="40" width="36" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hk5-Sa-Koj">
+                                <rect key="frame" x="308" y="617" width="32" height="30"/>
+                                <state key="normal" title="Hide">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedHide:" destination="rTA-pM-MPr" eventType="touchUpInside" id="wa5-4s-euq"/>
+                                </connections>
+                            </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pjZ-7u-EJF">
+                                <rect key="frame" x="60" y="189" width="255" height="290"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="cCf-3i-Opc">
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuI-A5-z3B" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="8mk-LX-YFT"/>
+                                                    <constraint firstAttribute="width" constant="65" id="lwk-Yb-g3f"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="1"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4W-fN-meg" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="KpO-Sp-1kU"/>
+                                                    <constraint firstAttribute="height" constant="65" id="uiQ-b0-VBu"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="2"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="subText" value="A B C"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpz-SE-yAu" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="190" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="5c5-nE-ruO"/>
+                                                    <constraint firstAttribute="height" constant="65" id="7mV-UP-ZEg"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="3"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="subText" value="D E F"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Gfa-rp-Yuo">
+                                        <rect key="frame" x="0.0" y="75" width="255" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGI-Nb-20l" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="JUp-Qz-aOv"/>
+                                                    <constraint firstAttribute="width" constant="65" id="LOY-4d-Gku"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="4"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="subText" value="G H I"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-jA-wKV" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="CkD-vJ-Owv"/>
+                                                    <constraint firstAttribute="height" constant="65" id="TUf-gb-VdB"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="5"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="subText" value="J K L"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-p1-mgc" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="190" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="3Cy-b8-KTe"/>
+                                                    <constraint firstAttribute="width" constant="65" id="CyV-a1-mfn"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="6"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="subText" value="M N O"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MwQ-K6-sGs">
+                                        <rect key="frame" x="0.0" y="150" width="255" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6k-d4-1sP" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="02v-rb-ztb"/>
+                                                    <constraint firstAttribute="height" constant="65" id="Jgl-JZ-3jS"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="7"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="subText" value="P Q R S"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2t-hf-C3A" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="Kht-o3-BDP"/>
+                                                    <constraint firstAttribute="width" constant="65" id="yOu-5x-tpL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="8"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="subText" value="T U V"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwY-tx-8C3" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="190" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="IGT-jX-W2K"/>
+                                                    <constraint firstAttribute="height" constant="65" id="lpG-42-rUJ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="9"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="subText" value="W X Y Z"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="81p-zt-RET">
+                                        <rect key="frame" x="0.0" y="225" width="255" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1U-3s-eC7" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="HFX-Nd-pU6"/>
+                                                    <constraint firstAttribute="width" constant="65" id="hVN-iI-Gfc"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="*"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtZ-O8-UOg" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="7Km-gX-lVy"/>
+                                                    <constraint firstAttribute="width" constant="65" id="Bd0-Qc-J7V"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="0"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi5-QP-bR6" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="190" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="DEU-nn-cBt"/>
+                                                    <constraint firstAttribute="width" constant="65" id="HGj-CR-Wlf"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="#"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="KeypadView"/>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ucL-8z-Xrb" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="Au8-Z2-5na"/>
+                            <constraint firstItem="8v0-md-EDz" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="C0P-2a-viG"/>
+                            <constraint firstAttribute="trailing" secondItem="Hk5-Sa-Koj" secondAttribute="trailing" constant="35" id="IUM-eH-7Ty"/>
+                            <constraint firstItem="ucL-8z-Xrb" firstAttribute="centerY" secondItem="kBh-qv-MHO" secondAttribute="centerY" id="VjI-TA-LcK"/>
+                            <constraint firstItem="5pV-Qy-axS" firstAttribute="top" secondItem="Hk5-Sa-Koj" secondAttribute="bottom" constant="20" id="W8X-CH-RGE"/>
+                            <constraint firstItem="Ljk-Xh-Ew4" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="cge-nW-Zut"/>
+                            <constraint firstItem="pjZ-7u-EJF" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="eJz-3a-8Zg"/>
+                            <constraint firstItem="5pV-Qy-axS" firstAttribute="top" secondItem="Ljk-Xh-Ew4" secondAttribute="bottom" constant="60" id="heV-8w-Qrr"/>
+                            <constraint firstItem="pjZ-7u-EJF" firstAttribute="centerY" secondItem="kBh-qv-MHO" secondAttribute="centerY" id="og4-Qw-ch2"/>
+                            <constraint firstItem="8v0-md-EDz" firstAttribute="top" secondItem="6my-CF-j7Z" secondAttribute="bottom" constant="60" id="pCh-No-8Jv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0uD-Tx-fyL"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="callerIDLabel" destination="rFk-bw-9Zh" id="aqd-ck-Lox"/>
+                        <outlet property="controlsStackView" destination="ucL-8z-Xrb" id="RYS-Ge-Ebb"/>
+                        <outlet property="endCallButton" destination="Ljk-Xh-Ew4" id="cdM-0g-J2a"/>
+                        <outlet property="hideButton" destination="Hk5-Sa-Koj" id="g4S-vk-IDT"/>
+                        <outlet property="keypadButton" destination="llj-3h-gRy" id="07W-pq-42H"/>
+                        <outlet property="keypadStackView" destination="pjZ-7u-EJF" id="M4m-TP-Xe7"/>
+                        <outlet property="muteButton" destination="IDG-PC-xg7" id="ToV-h8-hlo"/>
+                        <outlet property="speakerButton" destination="9XL-Ac-2Cd" id="hlc-Cp-LSP"/>
+                        <outlet property="timerLabel" destination="0Wr-2J-NUc" id="885-gb-Igo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpm-y8-pyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469.60000000000002" y="152.47376311844079"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hangup" width="62" height="62"/>
+        <image name="keypad" width="65" height="84"/>
+        <image name="mute" width="65" height="81"/>
+        <image name="speaker" width="33" height="28"/>
+    </resources>
+</document>
