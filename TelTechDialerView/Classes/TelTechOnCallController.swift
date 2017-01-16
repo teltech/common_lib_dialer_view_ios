@@ -9,9 +9,9 @@ public class TelTechOnCallController : UIViewController {
     
     @IBOutlet weak var callerIDLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var muteButton: UIButton!
-    @IBOutlet weak var keypadButton: UIButton!
-    @IBOutlet weak var speakerButton: UIButton!
+    @IBOutlet weak var muteButton: TelTechDialerButton!
+    @IBOutlet weak var keypadButton: TelTechDialerButton!
+    @IBOutlet weak var speakerButton: TelTechDialerButton!
     @IBOutlet weak var endCallButton: UIButton!
     @IBOutlet weak var keypadStackView: UIStackView!
     @IBOutlet weak var controlsStackView: UIStackView!
@@ -33,6 +33,7 @@ public class TelTechOnCallController : UIViewController {
     }
     
     @IBAction func tappedSpeaker(_ sender: Any) {
+        self.speakerButton.isOn = !self.speakerButton.isOn
         self.delegate?.tappedSpeaker?(state: true)
     }
     @IBAction func tappedKeypad(_ sender: Any) {
@@ -53,6 +54,7 @@ public class TelTechOnCallController : UIViewController {
         }
     }
     @IBAction func tappedMute(_ sender: Any) {
+        self.muteButton.isOn = !self.muteButton.isOn
         self.delegate?.tappedMute?()
     }
     @IBAction func tappedEndCall(_ sender: Any) {

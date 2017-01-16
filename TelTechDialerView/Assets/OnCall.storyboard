@@ -47,48 +47,108 @@
                                     <action selector="tappedEndCall:" destination="rTA-pM-MPr" eventType="touchUpInside" id="hGq-Fc-va0"/>
                                 </connections>
                             </button>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-8z-Xrb">
-                                <rect key="frame" x="78" y="292" width="220" height="84"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-8z-Xrb">
+                                <rect key="frame" x="60.5" y="291" width="255" height="86.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-PC-xg7">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="84"/>
-                                        <state key="normal" image="mute"/>
-                                        <connections>
-                                            <action selector="tappedMute:" destination="rTA-pM-MPr" eventType="touchUpInside" id="7aJ-AD-CLe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llj-3h-gRy">
-                                        <rect key="frame" x="95" y="0.0" width="65" height="84"/>
-                                        <state key="normal" image="keypad"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="KeypadView"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tappedKeypad:" destination="rTA-pM-MPr" eventType="touchUpInside" id="IwF-6D-o8I"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-Ac-2Cd" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                        <rect key="frame" x="190" y="0.0" width="30" height="84"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="speaker"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tappedSpeaker:" destination="rTA-pM-MPr" eventType="touchUpInside" id="OY0-1v-mQX"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-vN-OX7">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="86.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-PC-xg7" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="4w0-8K-n6V"/>
+                                                    <constraint firstAttribute="width" constant="65" id="E4b-CJ-NvU"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="mute"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isToggle" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedMute:" destination="rTA-pM-MPr" eventType="touchUpInside" id="7aJ-AD-CLe"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3M-pc-tQD">
+                                                <rect key="frame" x="19.5" y="73" width="26.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7xk-1I-eC2">
+                                        <rect key="frame" x="95" y="0.0" width="65" height="86.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llj-3h-gRy" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="ETJ-cE-uHO"/>
+                                                    <constraint firstAttribute="width" constant="65" id="Iuo-t1-mcI"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="KeypadView"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="keypad"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypad:" destination="rTA-pM-MPr" eventType="touchUpInside" id="IwF-6D-o8I"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keypad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RW-LD-Vey">
+                                                <rect key="frame" x="13.5" y="73" width="38" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qCV-hx-eoS">
+                                        <rect key="frame" x="190" y="0.0" width="65" height="86.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-Ac-2Cd" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="HKz-Hp-sNu"/>
+                                                    <constraint firstAttribute="width" constant="65" id="Ssm-nU-0GV"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="speaker"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isToggle" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedSpeaker:" destination="rTA-pM-MPr" eventType="touchUpInside" id="OY0-1v-mQX"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INV-oG-9ZV">
+                                                <rect key="frame" x="12" y="73" width="41.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8v0-md-EDz">
-                                <rect key="frame" x="139" y="80" width="98" height="61"/>
+                                <rect key="frame" x="139.5" y="80" width="97.5" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caller ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFk-bw-9Zh">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="31.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-2J-NUc">
-                                        <rect key="frame" x="31" y="40" width="36" height="21"/>
+                                        <rect key="frame" x="31" y="39.5" width="36" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -407,8 +467,8 @@
     </scenes>
     <resources>
         <image name="hangup" width="62" height="62"/>
-        <image name="keypad" width="65" height="84"/>
-        <image name="mute" width="65" height="81"/>
+        <image name="keypad" width="26" height="26"/>
+        <image name="mute" width="18" height="30"/>
         <image name="speaker" width="33" height="28"/>
     </resources>
 </document>
