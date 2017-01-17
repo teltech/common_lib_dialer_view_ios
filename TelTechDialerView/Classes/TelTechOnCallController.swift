@@ -21,12 +21,15 @@ public class TelTechOnCallController : UIViewController {
     @IBOutlet weak var controlsStackView: UIStackView!
     @IBOutlet weak var hideButton: UIButton!
     
-    var timer: Timer?
+    private var timer: Timer?
+    private(set) var callTime: Double = 0
+
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    /** Call this method to create a new on call controller **/
     public static func create() -> TelTechOnCallController {
         let podBundle = Bundle(for: TelTechOnCallController.self)
         let bundleURL = podBundle.url(forResource: "TelTechDialerView", withExtension: "bundle")
@@ -36,10 +39,38 @@ public class TelTechOnCallController : UIViewController {
         return vc
     }
     
+    
+    /**
+     Starts the call, according to the UI.
+     Activates the call timer
+     **/
+    public func start() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true);
+        
+    }
+    
+    /** Call this method to end a call **/
+    public func end() {
+        timer?.invalidate()
+        timer = nil
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    /**
+        Set the displayed caller ID
+    **/
+    public func setCallerID(callerID: String) {
+        self.callerIDLabel.text = callerID
+    }
+    
+
+    
+    
     @IBAction func tappedSpeaker(_ sender: Any) {
         self.speakerButton.isOn = !self.speakerButton.isOn
         self.delegate?.tappedSpeaker?(state: true)
     }
+    
     @IBAction func tappedKeypad(_ sender: Any) {
         self.delegate?.tappedKeypad?()
 
@@ -57,13 +88,16 @@ public class TelTechOnCallController : UIViewController {
             }
         }
     }
+    
     @IBAction func tappedMute(_ sender: Any) {
         self.muteButton.isOn = !self.muteButton.isOn
-        self.delegate?.tappedMute?()
+        self.delegate?.tappedMute?(state: self.muteButton.isOn)
     }
+    
     @IBAction func tappedEndCall(_ sender: Any) {
         self.delegate?.tappedEndCall?()
     }
+    
     @IBAction func tappedHide(_ sender: Any) {
 
         self.controlsStackView.isHidden = false
@@ -75,29 +109,71 @@ public class TelTechOnCallController : UIViewController {
             if completed {
                 self.hideButton.isHidden = true
                 self.keypadStackView.isHidden = true
-
-                
             }
         }
     }
     
-    /**
-     Starts the call, according to the UI.
-     Activates the call timer
-     **/
-    public func start() {
-//        timer = Timer(timeInterval: 1.0, target: self, selector: Selector("timerFired"), userInfo: nil, repeats: true)
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true);
 
-//        timer = Timer(timeInterval: 1.0, repeats: true, block: { (timer) in
-//            
-//        })
-        
+    @IBAction func tappedKeypadButton1(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "1")
+    }
+
+    @IBAction func tappedKeypadButton2(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "2")
+
     }
     
-    private var callTime: Double = 0
+    @IBAction func tappedKeypadButton3(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "3")
+
+    }
     
-    public func timerFired() {
+    @IBAction func tappedKeypadButton4(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "4")
+
+    }
+    
+    @IBAction func tappedKeypadButton5(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "5")
+
+    }
+    
+    @IBAction func tappedKeypadButton6(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "6")
+
+    }
+    
+    @IBAction func tappedKeypadButton7(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "7")
+
+    }
+    
+    @IBAction func tappedKeypadButton8(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "8")
+
+    }
+    
+    @IBAction func tappedKeypadButton9(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "9")
+
+    }
+    
+    @IBAction func tappedKeypadButtonStar(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "*")
+
+    }
+    
+    @IBAction func tappedKeypadButton0(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "0")
+
+    }
+    
+    @IBAction func tappedKeypadButtonPound(_ sender: Any) {
+        self.delegate?.tappedKeypadButton?(button: "#")
+
+    }
+    
+    @objc private func timerFired() {
         if let timer = timer {
             callTime += timer.timeInterval
             self.timerLabel.text = formatTime(callTime)
@@ -123,7 +199,8 @@ public class TelTechOnCallController : UIViewController {
 public protocol TelTechOnCallDelegate {
     @objc optional func tappedSpeaker(state: Bool)
     @objc optional func tappedKeypad()
-    @objc optional func tappedMute()
+    @objc optional func tappedMute(state: Bool)
     @objc optional func tappedEndCall()
+    @objc optional func tappedKeypadButton(button: String)
     
 }

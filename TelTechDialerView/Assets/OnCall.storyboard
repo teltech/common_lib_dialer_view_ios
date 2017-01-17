@@ -155,7 +155,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hk5-Sa-Koj">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hk5-Sa-Koj">
                                 <rect key="frame" x="308" y="617" width="32" height="30"/>
                                 <state key="normal" title="Hide">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -191,6 +191,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="1"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton1:" destination="rTA-pM-MPr" eventType="touchUpInside" id="i02-qF-QCn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4W-fN-meg" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
                                                 <rect key="frame" x="95" y="0.0" width="65" height="65"/>
@@ -208,6 +211,9 @@
                                                         <real key="value" value="32.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton2:" destination="rTA-pM-MPr" eventType="touchUpInside" id="Wky-q1-SyM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpz-SE-yAu" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
                                                 <rect key="frame" x="190" y="0.0" width="65" height="65"/>
@@ -228,6 +234,9 @@
                                                         <real key="value" value="32.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton3:" destination="rTA-pM-MPr" eventType="touchUpInside" id="tWV-ic-aDN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -256,6 +265,9 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="4"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="subText" value="G H I"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton4:" destination="rTA-pM-MPr" eventType="touchUpInside" id="LJl-Jh-uNU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-jA-wKV" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
                                                 <rect key="frame" x="95" y="0.0" width="65" height="65"/>
@@ -273,6 +285,9 @@
                                                         <real key="value" value="32.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton5:" destination="rTA-pM-MPr" eventType="touchUpInside" id="7rv-hM-cSU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-p1-mgc" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
                                                 <rect key="frame" x="190" y="0.0" width="65" height="65"/>
@@ -293,6 +308,9 @@
                                                         <real key="value" value="32.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton6:" destination="rTA-pM-MPr" eventType="touchUpInside" id="fRU-LM-ZZO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -321,6 +339,9 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="7"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="subText" value="P Q R S"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton7:" destination="rTA-pM-MPr" eventType="touchUpInside" id="0VY-V9-s3r"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2t-hf-C3A" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
                                                 <rect key="frame" x="95" y="0.0" width="65" height="65"/>
@@ -338,6 +359,9 @@
                                                         <real key="value" value="32.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton8:" destination="rTA-pM-MPr" eventType="touchUpInside" id="bgm-zw-YEJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwY-tx-8C3" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
                                                 <rect key="frame" x="190" y="0.0" width="65" height="65"/>
@@ -358,6 +382,9 @@
                                                         <real key="value" value="32.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton9:" destination="rTA-pM-MPr" eventType="touchUpInside" id="arL-kB-II0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -385,6 +412,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="*"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButtonStar:" destination="rTA-pM-MPr" eventType="touchUpInside" id="jcb-MU-Jyl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtZ-O8-UOg" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
                                                 <rect key="frame" x="95" y="0.0" width="65" height="65"/>
@@ -401,6 +431,9 @@
                                                         <real key="value" value="32.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButton0:" destination="rTA-pM-MPr" eventType="touchUpInside" id="8pG-Fj-Pf5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi5-QP-bR6" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
                                                 <rect key="frame" x="190" y="0.0" width="65" height="65"/>
@@ -420,6 +453,9 @@
                                                         <real key="value" value="32.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedKeypadButtonPound:" destination="rTA-pM-MPr" eventType="touchUpInside" id="KNP-vM-Jpk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -444,10 +480,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0uD-Tx-fyL"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="callerIDLabel" destination="rFk-bw-9Zh" id="aqd-ck-Lox"/>
                         <outlet property="controlsStackView" destination="ucL-8z-Xrb" id="RYS-Ge-Ebb"/>
