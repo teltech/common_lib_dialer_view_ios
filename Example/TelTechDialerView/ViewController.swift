@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     
     @IBAction func tappedStartCall(_ sender: Any) {
         let controller = TelTechOnCallController.create()
+        controller.start()
         self.present(controller, animated: true, completion: nil)
     }
     

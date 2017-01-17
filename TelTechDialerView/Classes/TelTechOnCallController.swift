@@ -8,7 +8,11 @@ public class TelTechOnCallController : UIViewController {
     public var delegate: TelTechOnCallDelegate?
     
     @IBOutlet weak var callerIDLabel: UILabel!
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel! {
+        didSet {
+            self.timerLabel.font = timerLabel.font.ttMonospacedDigitFont
+        }
+    }
     @IBOutlet weak var muteButton: TelTechDialerButton!
     @IBOutlet weak var keypadButton: TelTechDialerButton!
     @IBOutlet weak var speakerButton: TelTechDialerButton!
@@ -82,10 +86,34 @@ public class TelTechOnCallController : UIViewController {
      Activates the call timer
      **/
     public func start() {
+//        timer = Timer(timeInterval: 1.0, target: self, selector: Selector("timerFired"), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true);
+
 //        timer = Timer(timeInterval: 1.0, repeats: true, block: { (timer) in
 //            
 //        })
         
+    }
+    
+    private var callTime: Double = 0
+    
+    public func timerFired() {
+        if let timer = timer {
+            callTime += timer.timeInterval
+            self.timerLabel.text = formatTime(callTime)
+        }
+    }
+    
+    
+    private func formatTime(_ seconds: Double) -> String {
+        let hours = (Int64(seconds)) / 60 / 60
+        let minutes = (Int64(seconds) / 60) % 60
+        let displaySeconds = Int64(seconds) % 60
+        
+        let hoursString = (hours > 0 ? (String(hours) + ":") : "")
+        let minutesString = ((minutes < 10 && hours > 0) ? ("0" + String(minutes)) : String(minutes))
+        let secondsString = (displaySeconds < 10 ? ("0" + String(displaySeconds)) : String(displaySeconds))
+        return hoursString + minutesString + ":" + secondsString
     }
     
     
