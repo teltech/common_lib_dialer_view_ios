@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TelTechDialerView'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A simple drop in to have an in-call UI for voip calls.'
 
 # This description is used to generate tags and improve search results.
@@ -40,5 +40,4 @@ It imitates the look and feel of the native iOS dialer.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Hero'
 end

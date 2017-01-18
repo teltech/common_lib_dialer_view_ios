@@ -27,8 +27,8 @@ public class TelTechDialerButton: UIButton {
     
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
+//            layer.cornerRadius = cornerRadius
+//            layer.masksToBounds = cornerRadius > 0
         }
     }
     @IBInspectable var borderWidth: CGFloat = 0 {
@@ -57,7 +57,7 @@ public class TelTechDialerButton: UIButton {
             textColor = UIColor.lightGray
         }
         
-        let bpath: UIBezierPath = UIBezierPath(ovalIn: rect)
+        let bpath: UIBezierPath = UIBezierPath(ovalIn: rect.insetBy(dx: 1, dy: 1))
         color.set()
         bpath.stroke()
         if isHighlighted || (self.isToggle && self.isOn) {

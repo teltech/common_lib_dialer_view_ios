@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q4N-eR-ow5">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,12 +36,12 @@
                         <viewControllerLayoutGuide type="bottom" id="5pV-Qy-axS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kBh-qv-MHO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-Xh-Ew4">
-                                <rect key="frame" x="157" y="545" width="62" height="62"/>
-                                <state key="normal" image="hangup"/>
+                                <rect key="frame" x="169.66666666666666" y="601" width="75" height="75"/>
+                                <state key="normal" backgroundImage="hangup"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="EndCall"/>
                                 </userDefinedRuntimeAttributes>
@@ -47,22 +49,22 @@
                                     <action selector="tappedEndCall:" destination="rTA-pM-MPr" eventType="touchUpInside" id="hGq-Fc-va0"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-8z-Xrb">
-                                <rect key="frame" x="60.5" y="291" width="255" height="86.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-8z-Xrb">
+                                <rect key="frame" x="40" y="320" width="276" height="96"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-vN-OX7">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="86.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75.333333333333343" height="96.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-PC-xg7" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="0.3333333333333286" y="0.0" width="75.000000000000014" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="4w0-8K-n6V"/>
-                                                    <constraint firstAttribute="width" constant="65" id="E4b-CJ-NvU"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="Gof-aa-IR7"/>
+                                                    <constraint firstAttribute="width" secondItem="IDG-PC-xg7" secondAttribute="height" multiplier="1:1" id="fgB-FR-atL"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="icon" value="mute"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isToggle" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="NO"/>
@@ -72,7 +74,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3M-pc-tQD">
-                                                <rect key="frame" x="19.5" y="73" width="26.5" height="13.5"/>
+                                                <rect key="frame" x="24.333333333333329" y="83" width="26.666666666666671" height="13.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -80,19 +82,18 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7xk-1I-eC2">
-                                        <rect key="frame" x="95" y="0.0" width="65" height="86.5"/>
+                                        <rect key="frame" x="100.33333333333334" y="0.0" width="75.333333333333314" height="96.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llj-3h-gRy" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="0.33333333333331439" y="0.0" width="75" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="ETJ-cE-uHO"/>
-                                                    <constraint firstAttribute="width" constant="65" id="Iuo-t1-mcI"/>
+                                                    <constraint firstAttribute="width" secondItem="llj-3h-gRy" secondAttribute="height" multiplier="1:1" id="dnj-uh-Xmr"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="KeypadView"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="icon" value="keypad"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -100,7 +101,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keypad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RW-LD-Vey">
-                                                <rect key="frame" x="13.5" y="73" width="38" height="13.5"/>
+                                                <rect key="frame" x="18.666666666666657" y="83" width="38" height="13.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -108,18 +109,17 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qCV-hx-eoS">
-                                        <rect key="frame" x="190" y="0.0" width="65" height="86.5"/>
+                                        <rect key="frame" x="200.66666666666669" y="0.0" width="75.333333333333314" height="96.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-Ac-2Cd" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="0.33333333333331439" y="0.0" width="75" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="HKz-Hp-sNu"/>
-                                                    <constraint firstAttribute="width" constant="65" id="Ssm-nU-0GV"/>
+                                                    <constraint firstAttribute="width" secondItem="9XL-Ac-2Cd" secondAttribute="height" multiplier="1:1" id="gYm-IS-hLj"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="icon" value="speaker"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isToggle" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOn" value="NO"/>
@@ -129,7 +129,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INV-oG-9ZV">
-                                                <rect key="frame" x="12" y="73" width="41.5" height="13.5"/>
+                                                <rect key="frame" x="17" y="83" width="41.666666666666629" height="13.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -137,26 +137,32 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="TdL-Vo-Ptv"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8v0-md-EDz">
-                                <rect key="frame" x="139.5" y="80" width="97.5" height="60"/>
+                                <rect key="frame" x="148.33333333333331" y="80" width="119.33333333333331" height="68"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caller ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFk-bw-9Zh">
-                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="31.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Caller ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFk-bw-9Zh">
+                                        <rect key="frame" x="0.0" y="0.0" width="119.33333333333334" height="39.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-2J-NUc">
-                                        <rect key="frame" x="31" y="39.5" width="36" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-2J-NUc">
+                                        <rect key="frame" x="42" y="47.666666666666671" width="35.666666666666657" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="lWi-NI-efr"/>
+                                </constraints>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hk5-Sa-Koj">
-                                <rect key="frame" x="308" y="617" width="32" height="30"/>
+                                <rect key="frame" x="347" y="686" width="32" height="30"/>
                                 <state key="normal" title="Hide">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -164,17 +170,17 @@
                                     <action selector="tappedHide:" destination="rTA-pM-MPr" eventType="touchUpInside" id="wa5-4s-euq"/>
                                 </connections>
                             </button>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pjZ-7u-EJF">
-                                <rect key="frame" x="60" y="189" width="255" height="290"/>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pjZ-7u-EJF">
+                                <rect key="frame" x="69.333333333333314" y="203.33333333333337" width="276" height="330"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="cCf-3i-Opc">
-                                        <rect key="frame" x="0.0" y="0.0" width="255" height="65"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="cCf-3i-Opc">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="74.999999999999972"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuI-A5-z3B" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75.000000000000014" height="74.999999999999972"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="8mk-LX-YFT"/>
-                                                    <constraint firstAttribute="width" constant="65" id="lwk-Yb-g3f"/>
+                                                    <constraint firstAttribute="height" constant="75" id="JE9-3R-Ugi"/>
+                                                    <constraint firstAttribute="width" secondItem="cuI-A5-z3B" secondAttribute="height" multiplier="1:1" id="f2F-Gb-CeC"/>
                                                 </constraints>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,7 +193,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="1"/>
                                                 </userDefinedRuntimeAttributes>
@@ -196,10 +202,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4W-fN-meg" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="95" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="100.66666666666669" y="0.0" width="75" height="74.999999999999972"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="65" id="KpO-Sp-1kU"/>
-                                                    <constraint firstAttribute="height" constant="65" id="uiQ-b0-VBu"/>
+                                                    <constraint firstAttribute="width" secondItem="b4W-fN-meg" secondAttribute="height" multiplier="1:1" id="aFz-gL-7lF"/>
+                                                    <constraint firstAttribute="height" constant="75" id="cc1-3J-8kU"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="2"/>
@@ -208,7 +214,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -216,10 +222,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpz-SE-yAu" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="190" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="201.33333333333337" y="0.0" width="74.666666666666629" height="74.999999999999972"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="65" id="5c5-nE-ruO"/>
-                                                    <constraint firstAttribute="height" constant="65" id="7mV-UP-ZEg"/>
+                                                    <constraint firstAttribute="height" constant="75" id="Vbb-eO-eJx"/>
+                                                    <constraint firstAttribute="width" secondItem="Fpz-SE-yAu" secondAttribute="height" multiplier="1:1" id="mmp-Oq-yAI"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="3"/>
@@ -231,7 +237,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -240,14 +246,13 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Gfa-rp-Yuo">
-                                        <rect key="frame" x="0.0" y="75" width="255" height="65"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Gfa-rp-Yuo">
+                                        <rect key="frame" x="0.0" y="84.999999999999972" width="276" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGI-Nb-20l" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75.333333333333329" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="JUp-Qz-aOv"/>
-                                                    <constraint firstAttribute="width" constant="65" id="LOY-4d-Gku"/>
+                                                    <constraint firstAttribute="width" secondItem="mGI-Nb-20l" secondAttribute="height" multiplier="1:1" id="o3A-p7-I2t"/>
                                                 </constraints>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -260,7 +265,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="4"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="subText" value="G H I"/>
@@ -270,10 +275,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-jA-wKV" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="95" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="100.33333333333334" y="0.0" width="75.666666666666686" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="65" id="CkD-vJ-Owv"/>
-                                                    <constraint firstAttribute="height" constant="65" id="TUf-gb-VdB"/>
+                                                    <constraint firstAttribute="width" secondItem="MAc-jA-wKV" secondAttribute="height" multiplier="1:1" id="L5S-z7-Z4h"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="5"/>
@@ -282,7 +286,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -290,10 +294,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-p1-mgc" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="190" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="201" y="0.0" width="75" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="3Cy-b8-KTe"/>
-                                                    <constraint firstAttribute="width" constant="65" id="CyV-a1-mfn"/>
+                                                    <constraint firstAttribute="width" secondItem="7bS-p1-mgc" secondAttribute="height" multiplier="1:1" id="nir-8D-chI"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="6"/>
@@ -305,7 +308,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -314,14 +317,13 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MwQ-K6-sGs">
-                                        <rect key="frame" x="0.0" y="150" width="255" height="65"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="MwQ-K6-sGs">
+                                        <rect key="frame" x="0.0" y="169.99999999999997" width="276" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6k-d4-1sP" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75.000000000000014" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="65" id="02v-rb-ztb"/>
-                                                    <constraint firstAttribute="height" constant="65" id="Jgl-JZ-3jS"/>
+                                                    <constraint firstAttribute="width" secondItem="V6k-d4-1sP" secondAttribute="height" multiplier="1:1" id="YS5-wy-NiE"/>
                                                 </constraints>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -334,7 +336,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="7"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="subText" value="P Q R S"/>
@@ -344,10 +346,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2t-hf-C3A" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="95" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="100.33333333333333" y="0.0" width="75.333333333333357" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="Kht-o3-BDP"/>
-                                                    <constraint firstAttribute="width" constant="65" id="yOu-5x-tpL"/>
+                                                    <constraint firstAttribute="width" secondItem="H2t-hf-C3A" secondAttribute="height" multiplier="1:1" id="lvC-sk-RXQ"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="8"/>
@@ -356,7 +357,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -364,10 +365,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwY-tx-8C3" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="190" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="201" y="0.0" width="75" height="75"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="65" id="IGT-jX-W2K"/>
-                                                    <constraint firstAttribute="height" constant="65" id="lpG-42-rUJ"/>
+                                                    <constraint firstAttribute="width" secondItem="GwY-tx-8C3" secondAttribute="height" multiplier="1:1" id="Iqe-SD-lY7"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="9"/>
@@ -379,7 +379,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -388,14 +388,13 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="81p-zt-RET">
-                                        <rect key="frame" x="0.0" y="225" width="255" height="65"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="81p-zt-RET">
+                                        <rect key="frame" x="0.0" y="254.99999999999997" width="276" height="75.000000000000028"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1U-3s-eC7" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75.000000000000014" height="75.000000000000057"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="HFX-Nd-pU6"/>
-                                                    <constraint firstAttribute="width" constant="65" id="hVN-iI-Gfc"/>
+                                                    <constraint firstAttribute="width" secondItem="J1U-3s-eC7" secondAttribute="height" multiplier="1:1" id="nD4-AB-mZp"/>
                                                 </constraints>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -408,7 +407,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="*"/>
                                                 </userDefinedRuntimeAttributes>
@@ -417,10 +416,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtZ-O8-UOg" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="95" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="100.33333333333333" y="0.0" width="75.333333333333357" height="75.000000000000057"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="7Km-gX-lVy"/>
-                                                    <constraint firstAttribute="width" constant="65" id="Bd0-Qc-J7V"/>
+                                                    <constraint firstAttribute="width" secondItem="UtZ-O8-UOg" secondAttribute="height" multiplier="1:1" id="pBe-gY-j12"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="0"/>
@@ -428,7 +426,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -436,10 +434,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi5-QP-bR6" customClass="TelTechDialerButton" customModule="TelTechDialerView" customModuleProvider="target">
-                                                <rect key="frame" x="190" y="0.0" width="65" height="65"/>
+                                                <rect key="frame" x="201" y="0.0" width="75" height="75.000000000000057"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="DEU-nn-cBt"/>
-                                                    <constraint firstAttribute="width" constant="65" id="HGj-CR-Wlf"/>
+                                                    <constraint firstAttribute="width" secondItem="Xi5-QP-bR6" secondAttribute="height" multiplier="1:1" id="rwZ-Qr-PYj"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="mainText" value="#"/>
@@ -450,7 +447,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="32.5"/>
+                                                        <real key="value" value="37.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -467,16 +464,23 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ucL-8z-Xrb" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="Au8-Z2-5na"/>
+                            <constraint firstItem="8v0-md-EDz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6my-CF-j7Z" secondAttribute="bottom" constant="20" id="5WA-yZ-fCo"/>
+                            <constraint firstItem="pjZ-7u-EJF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8v0-md-EDz" secondAttribute="bottom" constant="20" id="8QJ-MQ-Vbb"/>
                             <constraint firstItem="8v0-md-EDz" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="C0P-2a-viG"/>
                             <constraint firstAttribute="trailing" secondItem="Hk5-Sa-Koj" secondAttribute="trailing" constant="35" id="IUM-eH-7Ty"/>
                             <constraint firstItem="ucL-8z-Xrb" firstAttribute="centerY" secondItem="kBh-qv-MHO" secondAttribute="centerY" id="VjI-TA-LcK"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ucL-8z-Xrb" secondAttribute="trailing" constant="20" id="VzM-d6-tDE"/>
                             <constraint firstItem="5pV-Qy-axS" firstAttribute="top" secondItem="Hk5-Sa-Koj" secondAttribute="bottom" constant="20" id="W8X-CH-RGE"/>
+                            <constraint firstItem="Ljk-Xh-Ew4" firstAttribute="height" secondItem="IDG-PC-xg7" secondAttribute="height" id="XKm-q1-15u"/>
+                            <constraint firstItem="ucL-8z-Xrb" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="aTP-MC-UMo"/>
                             <constraint firstItem="Ljk-Xh-Ew4" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="cge-nW-Zut"/>
+                            <constraint firstItem="pjZ-7u-EJF" firstAttribute="width" secondItem="ucL-8z-Xrb" secondAttribute="width" id="d2Y-g1-D2n"/>
                             <constraint firstItem="pjZ-7u-EJF" firstAttribute="centerX" secondItem="kBh-qv-MHO" secondAttribute="centerX" id="eJz-3a-8Zg"/>
                             <constraint firstItem="5pV-Qy-axS" firstAttribute="top" secondItem="Ljk-Xh-Ew4" secondAttribute="bottom" constant="60" id="heV-8w-Qrr"/>
+                            <constraint firstItem="Ljk-Xh-Ew4" firstAttribute="width" secondItem="IDG-PC-xg7" secondAttribute="width" id="id3-AA-rAA"/>
+                            <constraint firstItem="ucL-8z-Xrb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kBh-qv-MHO" secondAttribute="leadingMargin" constant="20" id="mkq-eI-OYd"/>
                             <constraint firstItem="pjZ-7u-EJF" firstAttribute="centerY" secondItem="kBh-qv-MHO" secondAttribute="centerY" id="og4-Qw-ch2"/>
-                            <constraint firstItem="8v0-md-EDz" firstAttribute="top" secondItem="6my-CF-j7Z" secondAttribute="bottom" constant="60" id="pCh-No-8Jv"/>
+                            <constraint firstItem="8v0-md-EDz" firstAttribute="top" secondItem="6my-CF-j7Z" secondAttribute="bottom" priority="750" constant="60" id="pCh-No-8Jv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0uD-Tx-fyL"/>
@@ -496,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wpm-y8-pyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="469.60000000000002" y="152.47376311844079"/>
+            <point key="canvasLocation" x="469.56521739130437" y="152.44565217391306"/>
         </scene>
     </scenes>
     <resources>
