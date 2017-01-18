@@ -195,7 +195,7 @@ public class TelTechOnCallController : UIViewController {
     
 }
 
-@objc
+@objc @available(iOS 9.0, *)
 public protocol TelTechOnCallDelegate {
     @objc optional func telTechOnCallController(_ controller: TelTechOnCallController, didChangeSpeakerState state: Bool)
     @objc optional func telTechOnCallControllerDidOpenKeypad(_ controller: TelTechOnCallController)
