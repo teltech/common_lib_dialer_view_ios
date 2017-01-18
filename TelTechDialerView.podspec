@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TelTechDialerView'
-  s.version          = '0.1.3'
+  s.version          = '0.2.0'
   s.summary          = 'A simple drop in to have an in-call UI for voip calls.'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ It imitates the look and feel of the native iOS dialer.
   s.source           = { :git => 'https://git.teltech.co/jasonclardy/TelTechDialerView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
 
   s.source_files = 'TelTechDialerView/Classes/**/*'
 
