@@ -63,6 +63,20 @@ public class TelTechOnCallController : UIViewController {
         self.callerIDLabel.text = callerID
     }
     
+    /**
+        Set the timer label. Only works if the timer is not already running. 
+        Can be used to display a "Connecting" message or something similar.
+    **/
+    public func setTimerString(timerString: String) {
+        self.timerLabel.text = timerString
+    }
+    
+    /**
+        Set the views background color
+    **/
+    public func setBackgroundColor(color: UIColor) {
+        self.view.backgroundColor = color
+    }
 
     
     
