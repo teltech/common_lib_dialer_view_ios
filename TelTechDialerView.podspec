@@ -22,7 +22,7 @@ This pod creates a simple interface for receiving and placing SIP calls.
 It imitates the look and feel of the native iOS dialer.
                        DESC
 
-  s.homepage         = 'https://git.teltech.co/jasonclardy/TelTechDialerView'
+  s.homepage         = 'https://github.com/teltech/common_lib_dialer_view_ios.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jason Clardy' => 'jason@teltech.co' }
