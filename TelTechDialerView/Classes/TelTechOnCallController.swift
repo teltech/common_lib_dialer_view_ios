@@ -82,7 +82,7 @@ public class TelTechOnCallController : UIViewController {
     
     @IBAction func tappedSpeaker(_ sender: Any) {
         self.speakerButton.isOn = !self.speakerButton.isOn
-        self.delegate?.telTechOnCallController?(self, didChangeSpeakerState: true)
+        self.delegate?.telTechOnCallController?(self, didChangeSpeakerState: self.speakerButton.isOn)
     }
     
     @IBAction func tappedKeypad(_ sender: Any) {

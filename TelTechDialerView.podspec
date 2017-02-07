@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TelTechDialerView'
-  s.version          = '0.3.0'
+  s.version          = '0.3.1'
   s.summary          = 'A simple drop in to have an in-call UI for voip calls.'
 
 # This description is used to generate tags and improve search results.
